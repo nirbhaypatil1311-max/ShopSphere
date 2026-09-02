@@ -46,13 +46,12 @@ JavaScript technologies.
 - React
 - JavaScript
 - Tailwind CSS
-- Axios
-- Context API
+
 
 ### Backend
 
 - Node.js
-- Express.js
+
 - JavaScript
 - JWT
 - bcryptjs
