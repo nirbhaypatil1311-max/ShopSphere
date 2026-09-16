@@ -61,14 +61,14 @@ export default function CartItem({
             +
           </button>
 
-          <button
-            className="ml-3 text-sm font-semibold text-red-600"
-            onClick={() =>
-              removeFromCart(item.id)
-            }
-          >
-            Remove
-          </button>
+         <button
+  className="ml-3 text-sm font-semibold text-red-600"
+  onClick={() =>
+    removeFromCart(item.product_id)
+  }
+>
+  Remove
+</button>
         </div>
       </div>
     </div>
