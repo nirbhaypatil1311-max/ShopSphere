@@ -3,9 +3,7 @@
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
 
-export default function CartItem({
-  item
-}) {
+export default function CartItem({ item }) {
   const {
     increase,
     decrease,
@@ -32,43 +30,49 @@ export default function CartItem({
         </h3>
 
         <p className="mt-1 font-bold">
-          ₹
-          {Number(
-            item.price
-          ).toLocaleString("en-IN")}
+          ₹{Number(item.price).toLocaleString("en-IN")}
         </p>
 
         <div className="mt-3 flex items-center gap-2">
+
+          {/* Decrease Quantity */}
           <button
+            type="button"
             className="rounded border px-3 py-1"
             onClick={() =>
-              decrease(item.id)
+              decrease(item.product_id)
             }
           >
             -
           </button>
 
-          <span>
+          {/* Current Quantity */}
+          <span className="min-w-6 text-center font-semibold">
             {item.quantity}
           </span>
 
+          {/* Increase Quantity */}
           <button
+            type="button"
             className="rounded border px-3 py-1"
             onClick={() =>
-              increase(item.id)
+              increase(item.product_id)
             }
           >
             +
           </button>
 
-         <button
-  className="ml-3 text-sm font-semibold text-red-600"
-  onClick={() =>
-    removeFromCart(item.product_id)
-  }
->
-  Remove
-</button>
+          {/* Remove Product */}
+          <button
+            type="button"
+            className="ml-3 text-sm font-semibold text-red-600"
+            onClick={() =>
+              removeFromCart(item.product_id)
+            }
+          >
+            Remove
+          </button>
+
         </div>
       </div>
     </div>
